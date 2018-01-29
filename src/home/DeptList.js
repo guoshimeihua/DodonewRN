@@ -63,21 +63,6 @@ export default class DeptList extends Component {
         });
     }
 
-    componentDidMount () {
-        this._sendDeptListRequest(this.state.page);
-    }
-
-    _renderItem ({item, index}) {
-        return <View style={styles.listItem}>
-            <View style={styles.deptView}>
-                <Text style={styles.deptText}>{item.departName}</Text>
-            </View>
-            <View style={styles.remarkView}>
-                <Text style={styles.remarkText}>{item.remark}</Text>
-            </View>
-        </View>
-    }
-
     // 下拉刷新
     _refresh () {
         console.log('下拉刷新');
@@ -118,7 +103,22 @@ export default class DeptList extends Component {
 
     _emptyComponent () {
         // 没有数据时，页面显示的内容
-        return <EmptyComponent text='暂无数据啦啦啦'/>
+        return <EmptyComponent text='暂无数据'/>
+    }
+
+    _renderItem ({item, index}) {
+        return <View style={styles.listItem}>
+            <View style={styles.deptView}>
+                <Text style={styles.deptText}>{item.departName}</Text>
+            </View>
+            <View style={styles.remarkView}>
+                <Text style={styles.remarkText}>{item.remark}</Text>
+            </View>
+        </View>
+    }
+
+    componentDidMount () {
+        this._sendDeptListRequest(this.state.page);
     }
 
     render () {
