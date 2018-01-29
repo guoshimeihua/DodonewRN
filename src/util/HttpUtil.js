@@ -3,7 +3,7 @@ import EncryptUtil from '../util/EncryptUtil';
 import SortedMap from 'sorted-map';
 
 let instance = axios.create({
-    baseURL: 'http://192.168.1.101:8080',
+    baseURL: 'http://192.168.100.120:8080',
     timeout: 30000,
     headers: {
         'Accept': 'application/json',

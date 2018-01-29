@@ -6,6 +6,7 @@ import Mine from '../mine/Mine';
 import Detail from '../home/Detail';
 import Login from '../login/Login';
 import DeptList from '../home/DeptList';
+import JobList from '../home/JobList';
 
 const Tab = TabNavigator({
     Home: {
@@ -120,6 +121,9 @@ const routeConfigs = {
     },
     DeptList: {
         screen: DeptList
+    },
+    JobList: {
+        screen: JobList
     }
 };
 

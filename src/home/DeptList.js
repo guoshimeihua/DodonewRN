@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, ActivityIndicator, FlatList, Alert, Text, RefreshControl} from 'react-native';
 import axios from '../util/HttpUtil';
+import EmptyComponent from '../common/EmptyComponent';
+import RefreshFooterComponent from '../common/RefreshFooterComponent';
 
 export default class DeptList extends Component {
     static navigationOptions = {
@@ -106,27 +108,9 @@ export default class DeptList extends Component {
 
     _footerComponent () {
         if (this.state.data.length != 0 && this.state.loadStatus == 'loading') {
-            return (
-                <View style={{
-                    height: 44,
-                    backgroundColor: '#f5f5f5',
-                    justifyContent: 'center',
-                    alignItems: 'center'
-                }}>
-                    <Text>{'正在加载....'}</Text>
-                </View>
-            )
+            return <RefreshFooterComponent/>
         } else if (this.state.loadStatus == 'nomore') {
-            return (
-                <View style={{
-                    height: 44,
-                    backgroundColor: '#f5f5f5',
-                    justifyContent: 'center',
-                    alignItems: 'center'
-                }}>
-                    <Text>{'暂无更多'}</Text>
-                </View>
-            )
+            return <RefreshFooterComponent text='暂无更多'/>
         } else {
             return null
         }
@@ -134,11 +118,7 @@ export default class DeptList extends Component {
 
     _emptyComponent () {
         // 没有数据时，页面显示的内容
-        return (
-            <View style={styles.emptyList}>
-                <Text style={styles.emptyText}>{'暂无数据'}</Text>
-            </View>
-        );
+        return <EmptyComponent text='暂无数据啦啦啦'/>
     }
 
     render () {
@@ -203,16 +183,5 @@ const styles = StyleSheet.create({
         fontSize: 15,
         padding: 10,
         color: 'gray'
-    },
-    emptyList: {
-        flex: 1,
-        height: 600,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    emptyText: {
-        fontSize: 20,
-        color: 'gray',
-        textAlign: 'center'
     }
 });

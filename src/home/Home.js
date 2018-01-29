@@ -13,6 +13,11 @@ export default class Home extends Component {
         this.props.navigation.navigate('DeptList');
     }
 
+    _onJobPress () {
+        console.log('职位管理点击');
+        this.props.navigation.navigate('JobList');
+    }
+
     render () {
         return (
             <ScrollView style={styles.container}>
@@ -31,7 +36,7 @@ export default class Home extends Component {
                     </TouchableHighlight>
                 </View>
                 <View style={styles.jobView}>
-                    <TouchableHighlight onPress={this._onPress.bind(this)} underlayColor={'#dcdcdc'}>
+                    <TouchableHighlight onPress={this._onJobPress.bind(this)} underlayColor={'#dcdcdc'}>
                         <View style={styles.btnView}>
                             <Text style={styles.btnText}>职位管理</Text>
                         </View>
