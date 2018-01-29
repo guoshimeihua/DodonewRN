@@ -7,6 +7,8 @@ import Detail from '../home/Detail';
 import Login from '../login/Login';
 import DeptList from '../home/DeptList';
 import JobList from '../home/JobList';
+import NoticeList from '../home/NoticeList';
+import NoticeDetail from '../home/NoticeDetail';
 
 const Tab = TabNavigator({
     Home: {
@@ -124,6 +126,12 @@ const routeConfigs = {
     },
     JobList: {
         screen: JobList
+    },
+    NoticeList: {
+        screen: NoticeList
+    },
+    NoticeDetail: {
+        screen: NoticeDetail
     }
 };
 
