@@ -3,12 +3,12 @@ import {View, Image, StyleSheet, Platform, AsyncStorage, ActivityIndicator} from
 import {TabNavigator, StackNavigator} from 'react-navigation';
 import Home from '../home/Home';
 import Mine from '../mine/Mine';
-import Detail from '../home/Detail';
 import Login from '../login/Login';
 import DeptList from '../home/DeptList';
 import JobList from '../home/JobList';
 import NoticeList from '../home/NoticeList';
 import NoticeDetail from '../home/NoticeDetail';
+import EmployeeList from '../home/EmployeeList';
 
 const Tab = TabNavigator({
     Home: {
@@ -118,9 +118,6 @@ const routeConfigs = {
     Tab: {
         screen: Tab
     },
-    Detail: {
-        screen: Detail
-    },
     DeptList: {
         screen: DeptList
     },
@@ -132,6 +129,9 @@ const routeConfigs = {
     },
     NoticeDetail: {
         screen: NoticeDetail
+    },
+    EmployeeList: {
+        screen: EmployeeList
     }
 };
 

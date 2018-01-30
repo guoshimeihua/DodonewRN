@@ -2,12 +2,6 @@ import React, {Component} from 'react';
 import {View, StyleSheet, TouchableHighlight, Text, ScrollView} from 'react-native';
 
 export default class Home extends Component {
-    _onPress () {
-        console.log('点击进入详情页面');
-        const {navigate} = this.props.navigation;
-        navigate('Detail', {name: 'Lucy'});
-    }
-
     _onDeptPress () {
         console.log('部门管理点击');
         this.props.navigation.navigate('DeptList');
@@ -23,6 +17,11 @@ export default class Home extends Component {
         this.props.navigation.navigate('NoticeList');
     }
 
+    _onEmployeePress () {
+        console.log('员工管理点击');
+        this.props.navigation.navigate('EmployeeList');
+    }
+
     render () {
         return (
             <ScrollView style={styles.container}>
@@ -34,7 +33,7 @@ export default class Home extends Component {
                     </TouchableHighlight>
                 </View>
                 <View style={styles.employeeView}>
-                    <TouchableHighlight onPress={this._onPress.bind(this)} underlayColor={'#dcdcdc'}>
+                    <TouchableHighlight onPress={this._onEmployeePress.bind(this)} underlayColor={'#dcdcdc'}>
                         <View style={styles.btnView}>
                             <Text style={styles.btnText}>员工管理</Text>
                         </View>
